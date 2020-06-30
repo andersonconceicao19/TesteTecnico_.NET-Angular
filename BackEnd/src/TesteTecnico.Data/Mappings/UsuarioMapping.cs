@@ -11,10 +11,16 @@ namespace TesteTecnico.Data.Mapping
             builder.HasKey(pk => pk.Id);                                
             builder.Property(u => u.Nome)
                 .IsRequired()
+                .HasColumnType("varchar(20)");
+
+            builder.Property(u => u.Sobrenome)
+                .IsRequired()
                 .HasColumnType("varchar(50)");
+
             builder.Property(u=> u.Email)
                 .IsRequired()
                 .HasColumnType("varchar(50)");
+           
         }
     }
 }

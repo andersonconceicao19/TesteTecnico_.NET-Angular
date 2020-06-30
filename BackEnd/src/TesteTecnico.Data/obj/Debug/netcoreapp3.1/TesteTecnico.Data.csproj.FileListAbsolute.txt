@@ -8,8 +8,8 @@ C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\b
 C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\bin\Debug\netcoreapp3.1\TesteTecnico.Data.runtimeconfig.dev.json
 C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\bin\Debug\netcoreapp3.1\TesteTecnico.Data.pdb
 C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\bin\Debug\netcoreapp3.1\TesteTecnico.Domain.pdb
-C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\obj\Debug\netcoreapp3.1\TesteTecnico.Data.csproj.CoreCompileInputs.cache
 C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\obj\Debug\netcoreapp3.1\TesteTecnico.Data.csproj.CopyComplete
 C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\obj\Debug\netcoreapp3.1\TesteTecnico.Data.dll
 C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\obj\Debug\netcoreapp3.1\TesteTecnico.Data.pdb
 C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\obj\Debug\netcoreapp3.1\TesteTecnico.Data.genruntimeconfig.cache
+C:\Users\ander\Desktop\TesteTecnico_.NET-Angular\BackEnd\src\TesteTecnico.Data\obj\Debug\netcoreapp3.1\TesteTecnico.Data.csproj.CoreCompileInputs.cache
