@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteTecnico.Data", "src\TesteTecnico.Data\TesteTecnico.Data.csproj", "{B9EC41D1-F60D-4723-8105-7585F5CE1BF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteTecnico.Domain", "src\TesteTecnico.Domain\TesteTecnico.Domain.csproj", "{CD6F1C44-379F-4714-889F-5C690D2771BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9EC41D1-F60D-4723-8105-7585F5CE1BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EC41D1-F60D-4723-8105-7585F5CE1BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EC41D1-F60D-4723-8105-7585F5CE1BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EC41D1-F60D-4723-8105-7585F5CE1BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6F1C44-379F-4714-889F-5C690D2771BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6F1C44-379F-4714-889F-5C690D2771BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6F1C44-379F-4714-889F-5C690D2771BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6F1C44-379F-4714-889F-5C690D2771BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2317C271-8CA3-4446-8011-6C085F4A02CA}
+	EndGlobalSection
+EndGlobal
