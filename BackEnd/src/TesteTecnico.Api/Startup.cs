@@ -22,6 +22,7 @@ namespace TesteTecnico.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddDbContext<MeuDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("ConectaDB")
                 ));
@@ -46,7 +47,7 @@ namespace TesteTecnico.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

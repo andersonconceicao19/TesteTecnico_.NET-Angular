@@ -8,6 +8,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CriarUsuarioComponent } from './pages/home/criar-usuario/criar-usuario.component';
 import { AtualizarUsuarioComponent } from './pages/home/atualizar-usuario/atualizar-usuario.component';
+import { ListarUsuariosComponent } from './pages/home/listar-usuarios/listar-usuarios.component';
+import { UsuariosService } from './pages/home/usuarios.service';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,17 @@ import { AtualizarUsuarioComponent } from './pages/home/atualizar-usuario/atuali
     HeaderComponent,
     HomeComponent,
     CriarUsuarioComponent,
-    AtualizarUsuarioComponent
+    AtualizarUsuarioComponent,
+    ListarUsuariosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UsuariosService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
