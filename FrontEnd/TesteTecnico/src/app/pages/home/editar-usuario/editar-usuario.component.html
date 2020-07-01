@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+    <div class="row">
+       
+        <div class="input-field col s12">
+            <label class="active" for="first_name2">Nome</label>
+            <input id="first_name2"
+            type="text" 
+            class="validate" 
+            
+            formControlName="nome"
+            />  
+        </div>
+
+        <div class="input-field col s12">
+            <label class="active" for="first_name2">sobrenome</label>
+            <input id="first_name2"
+            type="text" 
+            class="validate form-control" 
+            formControlName="sobrenome"
+            >            
+        </div>
+        <div class="input-field col s12">
+            <label class="active" for="first_name2">email</label>
+            
+            <input id="first_name2" 
+            type="email" 
+            class="validate" 
+            formControlName="email"
+            />
+        </div>
+
+        <div class="input-field col s12">
+            <input id="first_name2" 
+            type="date" 
+            class="validate" 
+            formControlName="dataNascimento"
+            >
+            <label class="active" for="first_name2">Data de Nascimento</label>
+        </div>
+
+
+        <div class="input-field col s12">
+            <input id="first_name2" type="text" class="validate" formControlName="escolaridade">
+            <label class="active" for="first_name2">Escolaridade</label>
+        </div>
+        <div style="padding: 10px;">
+            <button type="submit" (click)="onSalvar()">Salvar</button>
+            <button type="button" (click)="onCancel()">Cancelar</button>
+        </div>
+    </div>    
+</form>

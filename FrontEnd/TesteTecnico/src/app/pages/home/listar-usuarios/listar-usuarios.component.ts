@@ -4,6 +4,7 @@ import { Observable, empty, Subject } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { UsuariosService } from "./../usuarios.service";
 import { Router, ActivatedRoute } from '@angular/router';
+import { error } from '@angular/compiler/src/util';
 
 
 
@@ -38,5 +39,15 @@ export class ListarUsuariosComponent implements OnInit {
   onEdit(curso)
   {
     this.router.navigate(['editar', curso], { relativeTo: this.route })
+  }
+  onDelete(id)
+  {
+    /*return this.usuarioService.Apagar(id).subscribe(
+      success => console.log("apagado"),
+      error => console.log("error")      
+    )*/
+
+    this.router.navigate(['apagar', id], {relativeTo: this.route})
+
   }
 }

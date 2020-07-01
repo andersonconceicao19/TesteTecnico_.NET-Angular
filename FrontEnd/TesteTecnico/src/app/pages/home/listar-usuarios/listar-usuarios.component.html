@@ -21,7 +21,7 @@
             <td>{{ usuario.dataNascimento }}</td>
             <td>{{ usuario.tipoEscolaridade }}</td>
             <th>
-                <button>Delete</button>
+                <button (click)="onDelete(usuario.id)">Delete</button>
                 <button (click)="onEdit(usuario.id)">Atualizar</button>
             </th>
         </tr>
