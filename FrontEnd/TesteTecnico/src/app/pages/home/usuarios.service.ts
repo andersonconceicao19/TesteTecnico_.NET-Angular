@@ -30,4 +30,9 @@ export class UsuariosService {
   {
     return this.http.post<Usuario>(`${this.url}/adicionar`, usuario, opt).pipe(take(1))
   }
+
+  atualizar(usuario: Usuario): Observable<Usuario>
+  {
+    return this.http.put<Usuario>(`${this.url}/atualizar`, usuario, opt).pipe(take(1))
+  }
 }
