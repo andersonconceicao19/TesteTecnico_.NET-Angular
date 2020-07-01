@@ -28,8 +28,7 @@ export class UsuariosService {
   }
 
   criar(usuario:Usuario): Observable<Usuario>
-  {    console.log(usuario);
-  
+  {    
     return this.http.post<Usuario>(`${this.url}/adicionar`, usuario, opt).pipe(take(1))
   }
 
