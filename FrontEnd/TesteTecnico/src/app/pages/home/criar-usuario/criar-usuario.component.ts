@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuariosService } from '../usuarios.service';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-criar-usuario',
@@ -10,13 +12,26 @@ import { Location } from '@angular/common';
 })
 export class CriarUsuarioComponent implements OnInit {
 
-  form: FormGroup;
-  submetido: boolean;
   constructor(private fb: FormBuilder,
               private services: UsuariosService,
-              private location: Location) { }
+              private location: Location,
+              private route: ActivatedRoute) { }
+  
+  form: FormGroup;
+  submetido: boolean;
+  
 
   ngOnInit(): void {
+
+    this.route.params
+    .pipe(
+      map((params: any) => params['id']),
+      switchMap(id => this.services.obterUsuarioId(id))
+    )
+    .subscribe(
+      usuario => this.AtualizarForm(usuario)
+    ) 
+
     this.form = this.fb.group(
       {
         nome: [null,[Validators.required, Validators.maxLength(20)]],
@@ -28,6 +43,17 @@ export class CriarUsuarioComponent implements OnInit {
     )
   }
 
+  
+  AtualizarForm(usuario)
+  {
+    this.form.patchValue({
+      nome: usuario.nome,
+      sobrenome: usuario.sobrenome,
+      email: usuario.email,
+      dataNascimento: usuario.dataNascimento,
+      escolaridade: usuario.escolaridade
+    })
+  }
   onSalvar()
   {
     this.submetido = true;
