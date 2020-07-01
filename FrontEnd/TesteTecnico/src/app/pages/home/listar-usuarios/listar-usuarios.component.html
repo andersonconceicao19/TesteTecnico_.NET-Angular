@@ -1,30 +1,40 @@
-<table>
+
+<table *ngIf="usuarios$ | async as usuarios; else loadingError" >
+    <button (click)="Onrefresh()">Atualizar</button>
+    <button>Adicionar </button>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Item Name</th>
-            <th>Item Price</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>E-mail</th>
+            <th>Data de Nascimento</th>
+            <th>Escolaridade</th>
+            <th></th>
         </tr>
     </thead>
 
     <tbody>
-        <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
+        <tr *ngFor="let usuario of usuarios$ | async" >
+            <td> {{ usuario.nome }} </td>
+            <td>{{ usuario.sobrenome }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.dataNascimento }}</td>
+            <td>{{ usuario.tipoEscolaridade }}</td>
             <th>
                 <button>Delete</button>
-                <button>Atualizar</button>
+                <button (click)="onEdit(usuario.id)">Atualizar</button>
             </th>
         </tr>
-        <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-            <th>
-                <button>Delete</button>
-                <button>Atualizar</button>
-            </th>
-        </tr>
+        
     </tbody>
 </table>
+<ng-template #loadingError>
+    <div *ngIf="error$ | async; else loading">
+        <span>
+            É necesário iniciar o servidor
+        </span>
+    </div>
+    <ng-template #loading>
+        <span> carregando curso</span>
+    </ng-template>    
+</ng-template> 

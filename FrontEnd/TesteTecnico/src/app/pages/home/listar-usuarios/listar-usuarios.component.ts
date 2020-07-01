@@ -1,7 +1,11 @@
-import { UsuariosService } from "./../usuarios.service";
 import { Usuario } from "./../usuario.model";
 import { Component, OnInit } from "@angular/core";
-import { error } from '@angular/compiler/src/util';
+import { Observable, empty, Subject } from "rxjs";
+import { catchError } from "rxjs/operators";
+import { UsuariosService } from "./../usuarios.service";
+import { Router, ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: "app-listar-usuarios",
@@ -9,14 +13,30 @@ import { error } from '@angular/compiler/src/util';
   styleUrls: ["./listar-usuarios.component.css"],
 })
 export class ListarUsuariosComponent implements OnInit {
-  public usuario: Usuario[];
+  public usuarios: Usuario[];
 
-  constructor(private usuarioService: UsuariosService) {}
+  usuarios$: Observable<Usuario[]>;
+  error$ = new Subject<boolean>();
+
+  constructor(private usuarioService: UsuariosService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.usuarioService.obterUsuarios().subscribe(
-      usuarios => this.usuario = usuarios,
-      error=> console.log(error)
+    this.Onrefresh()
+  }
+  
+  Onrefresh()
+  {
+    this.usuarios$ = this.usuarioService.obterUsuarios().pipe(
+      catchError((error) => {
+        console.log(error);
+        this.error$.next(true)
+        return empty();
+      })
     );
+  }
+
+  onEdit(curso)
+  {
+    this.router.navigate(['editar', curso], { relativeTo: this.route })
   }
 }

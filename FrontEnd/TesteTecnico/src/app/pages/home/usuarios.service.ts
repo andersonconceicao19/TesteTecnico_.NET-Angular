@@ -1,18 +1,30 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 
+import { environment } from './../../../environments/environment';
 import { Usuario } from "./usuario.model";
+import { take } from 'rxjs/operators';
+
+var opt = { headers: new HttpHeaders({"content-type": "application/json"})}
 
 @Injectable({
   providedIn: "root",
 })
+
+
 export class UsuariosService {
-  protected url: string = "https://localhost:44324/api/usuario";
+
+
+  private readonly url = `${ environment.url }usuario`;
 
   constructor(private http: HttpClient) {}
 
   obterUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(this.url + "obtertodos");
+    return this.http.get<Usuario[]>(this.url)
+  }
+  criar(usuario: Usuario): Observable<Usuario>
+  {
+    return this.http.post<Usuario>(`${this.url}/adicionar`, usuario, opt).pipe(take(1))
   }
 }
