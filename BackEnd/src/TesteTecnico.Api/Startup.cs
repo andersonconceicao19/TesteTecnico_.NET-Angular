@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,8 +26,12 @@ namespace TesteTecnico.Api
                 options => options.UseSqlServer(Configuration.GetConnectionString("ConectaDB")
                 ));
 
+            /*Injetando dependencias*/
             services.AddScoped<MeuDbContext>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+            /*Configurando automapper*/
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 
 namespace TesteTecnico.Domain.Models
 {
@@ -20,7 +21,6 @@ namespace TesteTecnico.Domain.Models
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
         public TipoEscolaridade TipoEscolaridade { get; set; }
-
 
     }
 }

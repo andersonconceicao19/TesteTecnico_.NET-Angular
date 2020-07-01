@@ -23,22 +23,36 @@ namespace TesteTecnico.Data.Repository
 
         public async Task<IEnumerable<TEntity>> ObterTodos()
         {
-            return await _db.ToListAsync();
+            return await _db.AsNoTracking().ToListAsync();
         }
-        public Task Adicionar(TEntity usuario)
+        public async Task<TEntity> ObterPorId(int id)
         {
-            throw new NotImplementedException();
+            return await _db.FindAsync(id);
+        }
+        public async Task Adicionar(TEntity entity)
+        {
+            _db.Add(entity);
+            await Savechanges();
+
         }
 
-        public Task Atualizar(TEntity usuario)
+        public async Task Atualizar(TEntity entity)
         {
-            throw new NotImplementedException();
+            _db.Update(entity);
+            await Savechanges();
         }
 
-        public Task Remover(int id)
+        public async Task Remover(int id)
         {
-            throw new NotImplementedException();
+            _db.Remove(await ObterPorId(id));
+            await Savechanges();
         }
+
+        public async Task<int> Savechanges()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
         public void Dispose()
         {
             _context?.Dispose();
