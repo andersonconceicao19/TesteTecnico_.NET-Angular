@@ -27,8 +27,10 @@ export class UsuariosService {
     return this.http.get<Usuario>(`${this.url}/${id}`).pipe(take(1))
   }
 
-  criar(usuario:Usuario): Observable<Usuario>
-  {    
+  criar(usuario: Usuario): Observable<Usuario>
+  {   
+    console.log(usuario);
+    
     return this.http.post<Usuario>(`${this.url}/adicionar`, usuario, opt).pipe(take(1))
   }
 

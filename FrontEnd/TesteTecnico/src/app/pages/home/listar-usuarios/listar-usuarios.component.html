@@ -1,40 +1,58 @@
-
-<table *ngIf="usuarios$ | async as usuarios; else loadingError" >
-    <button (click)="Onrefresh()">Atualizar</button>
-    <button>Adicionar </button>
-    <thead>
-        <tr>
+<div class="card mt-3">
+    <div class="card-header">
+      <div class="float-left">
+        <h4>Dados dos Alunos</h4>
+      </div>
+      <div class="float-right">
+        <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo Curso</button>
+        <button type="button" class="btn btn-secondary" (click)="Onrefresh()">Atualizar</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover" *ngIf="(usuarios$ | async) as users; else loading">
+        <thead>
+          <tr>
+            <th>#</th>
             <th>Nome</th>
             <th>Sobrenome</th>
-            <th>E-mail</th>
+            <th>Email</th>
             <th>Data de Nascimento</th>
             <th>Escolaridade</th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr *ngFor="let usuario of usuarios$ | async" >
-            <td> {{ usuario.nome }} </td>
-            <td>{{ usuario.sobrenome }}</td>
-            <td>{{ usuario.email }}</td>
-            <td>{{ usuario.dataNascimento }}</td>
-            <td>{{ usuario.tipoEscolaridade }}</td>
-            <th>
-                <button (click)="onDelete(usuario.id)">Delete</button>
-                <button (click)="onEdit(usuario.id)">Atualizar</button>
-            </th>
-        </tr>
-        
-    </tbody>
-</table>
-<ng-template #loadingError>
-    <div *ngIf="error$ | async; else loading">
-        <span>
-            É necesário iniciar o servidor
-        </span>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.nome }}</td>
+            <td>{{ user.sobrenome }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.dataNascimento }}</td>
+            <td>{{ user.tipoEscolaridade }}</td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(user.id)">
+                  Atualizar
+                </button>
+  
+                <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(user)">
+                  Remover
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <ng-template #loading>
+        <span>Carregando alunos...</span>
+      </ng-template>
     </div>
-    <ng-template #loading>
-        <span> carregando curso</span>
-    </ng-template>    
-</ng-template> 
+  </div>
+  <!--(click)="onConfirmDelete()"(click)="onDeclineDelete()"-->
+  <ng-template #deleteModal>
+    <div class="modal-body text-center">
+      <p>Tem certeza que deseja remover esse aluno?</p>
+      <button type="button" class="btn btn-default" >Sim</button>
+      <button type="button" class="btn btn-primary" >Nao</button>
+    </div>
+  </ng-template>

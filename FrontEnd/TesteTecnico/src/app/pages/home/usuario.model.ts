@@ -4,5 +4,5 @@ export class Usuario {
     sobrenome: string;
     email: string;
     dataNascimento: Date;
-    tipoEscolaridade: number;
+    tipoEscolaridade: any;
 }
