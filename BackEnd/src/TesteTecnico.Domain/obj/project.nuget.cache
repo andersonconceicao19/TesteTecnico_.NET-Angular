@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UH0SYjUX8TbxUwxvjzFLci3GTwxV7IlKUhAqaN0t9mvL6WPY1YC0YRObBl0dwiQj/CAQ8q0kkPF2MJXaNFLdFA==",
+  "dgSpecHash": "DTmnd+s7KS1W8sHceLa0iL5zgJSgqzyDxbPtWZDDT+spnXEYyTWjsPmCo6Y1K13B9t6K8UJXyGWZyqpF5MFPnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

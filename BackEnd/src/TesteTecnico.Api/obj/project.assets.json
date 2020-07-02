@@ -5066,11 +5066,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\TesteTecnico.Api.csproj",
+      "projectUniqueName": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\TesteTecnico.Api.csproj",
       "projectName": "TesteTecnico.Api",
-      "projectPath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\TesteTecnico.Api.csproj",
+      "projectPath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\TesteTecnico.Api.csproj",
       "packagesPath": "C:\\Users\\ander\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\obj\\",
+      "outputPath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ander\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5086,11 +5086,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Data\\TesteTecnico.Data.csproj": {
-              "projectPath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Data\\TesteTecnico.Data.csproj"
+            "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Data\\TesteTecnico.Data.csproj": {
+              "projectPath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Data\\TesteTecnico.Data.csproj"
             },
-            "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj": {
-              "projectPath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj"
+            "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj": {
+              "projectPath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj"
             }
           }
         }

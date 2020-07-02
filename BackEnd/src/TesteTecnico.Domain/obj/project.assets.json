@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj",
       "projectName": "TesteTecnico.Domain",
-      "projectPath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj",
+      "projectPath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\TesteTecnico.Domain.csproj",
       "packagesPath": "C:\\Users\\ander\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\obj\\",
+      "outputPath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ander\\AppData\\Roaming\\NuGet\\NuGet.Config",

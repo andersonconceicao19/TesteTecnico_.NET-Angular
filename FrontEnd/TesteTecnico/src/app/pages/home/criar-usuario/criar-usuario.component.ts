@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { UsuariosService } from "../usuarios.service";
 import { Location } from "@angular/common";
-import { ActivatedRoute } from "@angular/router";
+
+
 
 @Component({
   selector: "app-criar-usuario",
@@ -12,13 +13,27 @@ import { ActivatedRoute } from "@angular/router";
 export class CriarUsuarioComponent implements OnInit {
   form: FormGroup;
   submetido: boolean;
+  maxDate: Date
+  minDate: Date
+  
+
   constructor(
     private fb: FormBuilder,
     private services: UsuariosService,
     private location: Location,
-  ) {}
+  ) {
+
+
+
+    this.minDate = new Date();
+    this.maxDate = new Date();
+    this.minDate.setDate(this.minDate.getDate() - 1);
+    this.maxDate.setDate(this.maxDate.getDate() + 7);
+  }
 
   ngOnInit(): void {
+    
+
     this.form = this.fb.group(
       {
         nome: [null,[Validators.required, Validators.maxLength(20)]],
@@ -51,7 +66,6 @@ export class CriarUsuarioComponent implements OnInit {
   }
   onCancel() {
     this.submetido = false;
-    this.form.reset();
-    console.log("cancelado");
+    this.location.back()
   }
 }

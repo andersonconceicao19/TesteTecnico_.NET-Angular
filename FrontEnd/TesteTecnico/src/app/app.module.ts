@@ -1,4 +1,6 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 
@@ -11,9 +13,11 @@ import { CriarUsuarioComponent } from './pages/home/criar-usuario/criar-usuario.
 import { ListarUsuariosComponent } from './pages/home/listar-usuarios/listar-usuarios.component';
 import { UsuariosService } from './pages/home/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ConfirmarDeletarUsuarioComponent } from './pages/home/confirmar-deletar-usuario/confirmar-deletar-usuario.component';
 import { EditarUsuarioComponent } from './pages/home/editar-usuario/editar-usuario.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'
+
 
 
 
@@ -26,15 +30,18 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HomeComponent,
     CriarUsuarioComponent,
     ListarUsuariosComponent,
-    ConfirmarDeletarUsuarioComponent,
     EditarUsuarioComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ModalModule.forRoot()
+    BrowserAnimationsModule,
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+      
   ],
   providers: [
     UsuariosService,

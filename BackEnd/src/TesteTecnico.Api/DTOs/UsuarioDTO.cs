@@ -21,9 +21,10 @@ namespace TesteTecnico.Api.DTOs
         public string Email { get; set; }
 
         [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataNascimento { get; set; }
 
-        [DisplayName("Escolaridade")]
-        public int TipoEscolaridade { get; set; }
+        [DisplayName("TipoEscolaridade")]
+        public string TipoEscolaridade { get; set; }
     }
 }

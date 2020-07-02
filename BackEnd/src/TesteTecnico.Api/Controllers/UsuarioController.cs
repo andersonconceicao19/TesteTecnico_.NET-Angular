@@ -43,7 +43,7 @@ namespace TesteTecnico.Api.Controllers
             return Ok(usuario);           
         }
 
-        [HttpDelete("Excluir/{id:int}")]
+        [HttpDelete("Excluir/{id}")]
         public async Task<IActionResult> RemoverUsuario([FromRoute]int id)
         {
             var usuario =await _usuario.ObterPorId(id);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4WEKO/mPFbiVFgsrVqbDGwKmHL3/UHATNzcufU1xf6iqLWkFICTk6Eibb/bMjGySK+ee0qY4OWHMa1tK31352g==",
+  "dgSpecHash": "XpUEOPCRfCMsOjCANFrdMkzsUGnllX934toQLpm8MqehqkOtpbqoteDDbkDi5GLC+ozOOaFpWCB3LAAfYNCpTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ander\\Desktop\\Backend\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\TesteTecnico.Api.csproj",
+  "projectFilePath": "C:\\Users\\ander\\Desktop\\TesteTecnico_.NET-Angular\\BackEnd\\src\\TesteTecnico.Api\\TesteTecnico.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ander\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\ander\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

@@ -65,7 +65,7 @@ export class EditarUsuarioComponent implements OnInit {
   }
   onCancel() {
     this.submetido = false;
-    this.form.reset();
+    this.location.back()
     console.log("cancelado");
   }
 }
