@@ -1,0 +1,40 @@
+
+<table *ngIf="usuarios$ | async as usuarios; else loadingError" >
+    <button (click)="Onrefresh()">Atualizar</button>
+    <button>Adicionar </button>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>E-mail</th>
+            <th>Data de Nascimento</th>
+            <th>Escolaridade</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let usuario of usuarios$ | async" >
+            <td> {{ usuario.nome }} </td>
+            <td>{{ usuario.sobrenome }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.dataNascimento }}</td>
+            <td>{{ usuario.tipoEscolaridade }}</td>
+            <th>
+                <button (click)="onDelete(usuario.id)">Delete</button>
+                <button (click)="onEdit(usuario.id)">Atualizar</button>
+            </th>
+        </tr>
+        
+    </tbody>
+</table>
+<ng-template #loadingError>
+    <div *ngIf="error$ | async; else loading">
+        <span>
+            É necesário iniciar o servidor
+        </span>
+    </div>
+    <ng-template #loading>
+        <span> carregando curso</span>
+    </ng-template>    
+</ng-template> 

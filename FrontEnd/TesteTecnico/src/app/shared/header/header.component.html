@@ -1,0 +1,14 @@
+<nav class="indigo darken-4" >
+  <div class="container ">
+    <div class="nav-wrapper indigo darken-4">
+      <a href="#" class="brand-logo ">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a [routerLink]="['/']">home</a></li>
+        <li><a [routerLink]="['/novo']">Components</a></li>       
+      </ul>
+    </div>
+  </div>    
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
