@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 import { environment } from './../../../environments/environment';
 import { Usuario } from "./usuario.model";
-import { take } from 'rxjs/operators';
+import { take, delay } from 'rxjs/operators';
 
 var opt = { headers: new HttpHeaders({"content-type": "application/json"})}
 

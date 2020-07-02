@@ -12,7 +12,6 @@ import { ActivatedRoute } from "@angular/router";
 export class CriarUsuarioComponent implements OnInit {
   form: FormGroup;
   submetido: boolean;
-  ajuste = []
   constructor(
     private fb: FormBuilder,
     private services: UsuariosService,
@@ -30,14 +29,8 @@ export class CriarUsuarioComponent implements OnInit {
       }
     )
   }
-/*  this.form.value.forEach(x => {
-      if(x.id){
-        console.log(x.id + "passou aqui");
-        
-      }
-    }); */
+
   onSalvar() {
-    this.ajuste = this.form.value;
     this.submetido = true;
     console.log(this.form.value);
 

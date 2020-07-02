@@ -4,8 +4,8 @@
         <h4>Dados dos Alunos</h4>
       </div>
       <div class="float-right">
-        <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo Curso</button>
-        <button type="button" class="btn btn-secondary" (click)="Onrefresh()">Atualizar</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo Aluno</button>
+        <button type="button" class="btn arredonda btn-secondary" (click)="onRefresh()">Atualizar pagina</button>
       </div>
     </div>
     <div class="card-body">
@@ -26,7 +26,7 @@
             <td>{{ user.nome }}</td>
             <td>{{ user.sobrenome }}</td>
             <td>{{ user.email }}</td>
-            <td>{{ user.dataNascimento }}</td>
+            <td>{{ user.dataNascimento | date:'dd/MM/yyyy' }}</td>
             <td>{{ user.tipoEscolaridade }}</td>
             <td>
               <span class="float-right">
@@ -34,7 +34,7 @@
                   Atualizar
                 </button>
   
-                <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(user)">
+                <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(user.id)">
                   Remover
                 </button>
               </span>
@@ -48,11 +48,11 @@
       </ng-template>
     </div>
   </div>
-  <!--(click)="onConfirmDelete()"(click)="onDeclineDelete()"-->
   <ng-template #deleteModal>
     <div class="modal-body text-center">
       <p>Tem certeza que deseja remover esse aluno?</p>
-      <button type="button" class="btn btn-default" >Sim</button>
-      <button type="button" class="btn btn-primary" >Nao</button>
+      <button type="submit" class="btn btn-default" (click)='onConfirmDelete()' >Sim</button>
+      <button type="submit" class="btn btn-primary" (click)='onDeclineDelete()' >Nao</button>
     </div>
   </ng-template>
+  

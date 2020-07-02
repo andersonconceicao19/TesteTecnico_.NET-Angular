@@ -13,6 +13,7 @@ import { UsuariosService } from './pages/home/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmarDeletarUsuarioComponent } from './pages/home/confirmar-deletar-usuario/confirmar-deletar-usuario.component';
 import { EditarUsuarioComponent } from './pages/home/editar-usuario/editar-usuario.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -32,7 +33,8 @@ import { EditarUsuarioComponent } from './pages/home/editar-usuario/editar-usuar
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
   providers: [
     UsuariosService,

@@ -1,11 +1,11 @@
-import { Usuario } from "./../usuario.model";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+
 import { Observable, empty, Subject } from "rxjs";
-import { catchError } from "rxjs/operators";
+import { catchError, delay } from "rxjs/operators";
 import { UsuariosService } from "./../usuarios.service";
 import { Router, ActivatedRoute } from '@angular/router';
-import { error } from '@angular/compiler/src/util';
-
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Usuario } from "./../usuario.model";
 
 
 @Component({
@@ -13,19 +13,26 @@ import { error } from '@angular/compiler/src/util';
   templateUrl: "./listar-usuarios.component.html",
   styleUrls: ["./listar-usuarios.component.css"],
 })
+
 export class ListarUsuariosComponent implements OnInit {
   public usuarios: Usuario[];
 
   usuarios$: Observable<Usuario[]>;
   error$ = new Subject<boolean>();
+  usuarioselecionado: Usuario
+  @ViewChild("deleteModal") deleteModal;
+  deleteModalRef: BsModalRef
 
-  constructor(private usuarioService: UsuariosService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private usuarioService: UsuariosService, 
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private modalService: BsModalService) {}
 
   ngOnInit(): void {
-    this.Onrefresh()
+    this.onRefresh()
   }
   
-  Onrefresh()
+  onRefresh()
   {
     this.usuarios$ = this.usuarioService.obterUsuarios().pipe(
       catchError((error) => {
@@ -40,14 +47,28 @@ export class ListarUsuariosComponent implements OnInit {
   {
     this.router.navigate(['editar', curso], { relativeTo: this.route })
   }
-  onDelete(id)
+  onDelete(curso)
   {
-    /*return this.usuarioService.Apagar(id).subscribe(
-      success => console.log("apagado"),
-      error => console.log("error")      
-    )*/
-
-    this.router.navigate(['apagar', id], {relativeTo: this.route})
-
+    this.usuarioselecionado = curso;
+    console.log(this.usuarioselecionado);
+    
+    this.deleteModalRef = this.modalService.show(this.deleteModal, { class: 'modal-lg' });
+   
+  }
+  onConfirmDelete()
+  {
+    this.usuarioService.Apagar(this.usuarioselecionado).subscribe(
+      success => {        
+        this.onRefresh();    
+        this.deleteModalRef.hide();     
+      },
+      error => {
+        this.onRefresh();  
+        this.deleteModalRef.hide();
+      })
+  }
+  onDeclineDelete()
+  {
+    this.deleteModalRef.hide();
   }
 }
