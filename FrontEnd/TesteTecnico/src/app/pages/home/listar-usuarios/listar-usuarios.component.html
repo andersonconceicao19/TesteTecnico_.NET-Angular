@@ -4,8 +4,8 @@
         <h4>Dados dos Alunos</h4>
       </div>
       <div class="float-right">
-        <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo Aluno</button>
-        <button type="button" class="btn arredonda btn-secondary" (click)="onRefresh()">Atualizar pagina</button>
+        <a type="button" class="btn btn-primary" role="button" [routerLink]="['novo']">adicionar novo aluno</a>
+        <a type="button" class="btn btn btn-lignt" role="button" (click)="onRefresh()"><i class="material-icons">update</i> </a>
       </div>
     </div>
     <div class="card-body">
@@ -22,7 +22,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of users">
-            <td>{{ user.id }}</td>
+            <td></td>
             <td>{{ user.nome }}</td>
             <td>{{ user.sobrenome }}</td>
             <td>{{ user.email }}</td>
@@ -30,11 +30,11 @@
             <td>{{ user.tipoEscolaridade }}</td>
             <td>
               <span class="float-right">
-                <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(user.id)">
+                <button class="btn btn-primary" (click)="onEdit(user.id)">
                   Atualizar
                 </button>
   
-                <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(user.id)">
+                <button class="btn btn-danger btn-info" (click)="onDelete(user.id)">
                   Remover
                 </button>
               </span>

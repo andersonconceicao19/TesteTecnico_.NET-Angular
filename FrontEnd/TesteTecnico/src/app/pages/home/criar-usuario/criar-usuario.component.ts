@@ -13,22 +13,13 @@ import { Location } from "@angular/common";
 export class CriarUsuarioComponent implements OnInit {
   form: FormGroup;
   submetido: boolean;
-  maxDate: Date
-  minDate: Date
-  
 
   constructor(
     private fb: FormBuilder,
     private services: UsuariosService,
     private location: Location,
   ) {
-
-
-
-    this.minDate = new Date();
-    this.maxDate = new Date();
-    this.minDate.setDate(this.minDate.getDate() - 1);
-    this.maxDate.setDate(this.maxDate.getDate() + 7);
+    
   }
 
   ngOnInit(): void {
@@ -54,9 +45,8 @@ export class CriarUsuarioComponent implements OnInit {
       this.services.criar(this.form.value).subscribe(
         success =>{
           this.location.back();
-          console.log("sucesso")
         },
-        error => console.log("error")        
+        error => console.log(error)        
 
       )      
     }
