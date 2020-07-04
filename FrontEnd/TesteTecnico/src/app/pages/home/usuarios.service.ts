@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 import { environment } from './../../../environments/environment';
 import { Usuario } from "./usuario.model";
-import { take } from 'rxjs/operators';
+import { take, delay } from 'rxjs/operators';
 
 var opt = { headers: new HttpHeaders({"content-type": "application/json"})}
 
@@ -27,9 +27,10 @@ export class UsuariosService {
     return this.http.get<Usuario>(`${this.url}/${id}`).pipe(take(1))
   }
 
-  criar(usuario:Usuario): Observable<Usuario>
-  {    console.log(usuario);
-  
+  criar(usuario: Usuario): Observable<Usuario>
+  {   
+    console.log(usuario);
+    
     return this.http.post<Usuario>(`${this.url}/adicionar`, usuario, opt).pipe(take(1))
   }
 

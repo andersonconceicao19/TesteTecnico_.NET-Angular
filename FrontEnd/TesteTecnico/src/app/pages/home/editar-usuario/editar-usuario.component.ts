@@ -34,7 +34,7 @@ export class EditarUsuarioComponent implements OnInit {
       sobrenome: [null, [Validators.required, Validators.maxLength(50)]],
       email: [null, [Validators.email]],
       dataNascimento: [null, [Validators.required]],
-      escolaridade: [null, [Validators.required]],
+      tipoEscolaridade: [null, [Validators.required]]  
     });
   }
   AtualizarForm(usuario) {
@@ -44,7 +44,7 @@ export class EditarUsuarioComponent implements OnInit {
       sobrenome: usuario.sobrenome,
       email: usuario.email,
       dataNascimento: usuario.dataNascimento,
-      escolaridade: usuario.escolaridade,
+      tipoEscolaridade: usuario.escolaridade,
     });
   }
   temErro(field: string) {
@@ -65,7 +65,6 @@ export class EditarUsuarioComponent implements OnInit {
   }
   onCancel() {
     this.submetido = false;
-    this.form.reset();
-    console.log("cancelado");
+    this.location.back()
   }
 }

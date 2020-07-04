@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { UsuariosService } from "../usuarios.service";
 import { Location } from "@angular/common";
-import { ActivatedRoute } from "@angular/router";
+
+
 
 @Component({
   selector: "app-criar-usuario",
@@ -10,37 +11,44 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./criar-usuario.component.css"],
 })
 export class CriarUsuarioComponent implements OnInit {
+  form: FormGroup;
+  submetido: boolean;
+
   constructor(
     private fb: FormBuilder,
     private services: UsuariosService,
     private location: Location,
-    private route: ActivatedRoute
-  ) {}
-
-  form: FormGroup;
-  submetido: boolean;
+  ) {
+    
+  }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      nome: [null, [Validators.required, Validators.maxLength(20)]],
-      sobrenome: [null, [Validators.required, Validators.maxLength(50)]],
-      email: [null, [Validators.email]],
-      dataNascimento: [null, [Validators.required]],
-      escolaridade: [null, [Validators.required]],
-    });
+    
+
+    this.form = this.fb.group(
+      {
+        nome: [null,[Validators.required, Validators.maxLength(20)]],
+        sobrenome:[null, [Validators.required, Validators.maxLength(50)]] ,
+        email: [null, [Validators.email]],
+        dataNascimento: [null,[ Validators.required]],
+        tipoEscolaridade: [null, [Validators.required]]        
+      }
+    )
   }
 
   onSalvar() {
     this.submetido = true;
     console.log(this.form.value);
-    if (this.form.valid) {
+
+    if(this.form.valid)
+    {
       this.services.criar(this.form.value).subscribe(
-        (success) => {
+        success =>{
           this.location.back();
-          console.log("salvo");
         },
-        (error) => console.log("")
-      );
+        error => console.log(error)        
+
+      )      
     }
   }
   temErro(field: string) {
@@ -48,7 +56,6 @@ export class CriarUsuarioComponent implements OnInit {
   }
   onCancel() {
     this.submetido = false;
-    this.form.reset();
-    console.log("cancelado");
+    this.location.back()
   }
 }
